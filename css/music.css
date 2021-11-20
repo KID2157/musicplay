@@ -1,0 +1,153 @@
+/*采用什么编码解析文件*/
+@charset "utf-8";
+
+body{
+    background: url(../img/图片1.png) no-repeat;
+    background-size: cover;/*自适应*/
+}
+
+/*banner begin*/
+
+/*设置横幅的宽高背景*/
+.banner{
+    width: 960px;
+    height: 250px;
+    background: url(../img/6.png) no-repeat;
+    margin: 80px;   /*外边距*/
+    opacity: 0.8;   /*透明度*/
+    box-shadow: 10px 15px 15px 1px black;   /*阴影*/
+    position: relative;
+}
+
+/*设置横幅的li的样式*/
+.banner ul li{
+    list-style: none;
+    display: inline-block;/*行内块元素，类似导航栏类效果*/
+    position: absolute;
+}
+
+/*操作图片*/
+.banner ul li img{
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*使用类选择器改变图片的位置*/
+.m1{top:30px;left:90px;}
+.m2{top:140px;left:160px;}
+.m3{top:67px;left:308px;}
+.m4{top:50px;left:500px;}
+.m5{top:160px;left:580px;}
+
+/*图片旋转的动画*/
+@keyframes img_rotate {
+    from {
+       transform: rotate(0deg); 
+    } to {
+        transform: rotate(360deg);
+    }
+}
+
+/*动画执行时间、次数*/
+.banner .img_rotate{
+    animation: img_rotate 5s infinite linear;
+}
+
+/*banner end*/
+
+/*播放器 begin*/
+
+/*修改播放器样式*/
+.music{
+    width: 550px;
+    height: 120px;
+    background: black;
+    position: fixed;
+    left: 0;
+    bottom: 50px;
+    opacity: 0.8;
+    box-shadow: 10px 15px 15px 1px black;   /*阴影*/
+}
+
+/*调整音乐盒图片的位置*/
+.music .m_img{
+    margin-top: 15px;
+    margin-left: 10px;
+    float: left;
+}
+
+/*修改音乐盒文本的显示*/
+.music .m_text{
+    float: left;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+/*使得多由a标签一起移动*/
+.music .m_btn{
+    float: left;
+    position: absolute;/*防止歌曲名称过长挤出按钮*/
+    left: 270px;
+}
+
+/*修改a标签，设置宽高及背景图片*/
+.music .m_btn a{
+    float: left;
+    width: 35px;
+    height: 35px;
+    background: url(../img/7.png) no-repeat;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+/*改变上一首按钮的图片*/
+.music .m_btn .m_prev{
+    background-position: -72px -2px;
+}
+.music .m_btn .m_prev:hover{
+    background-position: -72px -34px;
+}
+
+/*改变暂停按钮的图片*/
+.music .m_btn .m_play{
+    background-position: -111px -5px;
+}
+.music .m_btn .m_play:hover{
+    background-position: -111px -47px;
+}
+
+/*改变下一首按钮的图片*/
+.music .m_btn .m_next{
+    background-position: -155px -2px;
+}
+.music .m_btn .m_next:hover{
+    background-position: -155px -34px;
+}
+
+/*设置右边的关闭样式*/
+.music .m_close{
+    float: right;
+    background: url(../img/7.png) no-repeat;
+    width: 20px;
+    height: 117px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+/*编写js时更换播放按钮为暂停时的代码*/
+.music .m_btn .m_pause{
+    background-position: -296px -95px;
+}
+.music .m_btn .m_pause:hover{
+    background-position: -338px -95px;
+}
+
+/*编写js时隐藏或者显示播放器的代码*/
+.music .m_open{
+    background-position: -48px 0px;
+}
+
+/*播放器 end*/
